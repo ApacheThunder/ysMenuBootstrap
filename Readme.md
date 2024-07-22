@@ -1,8 +1,8 @@
 # YSMENU Bootstrap
 
-This is a modified version of nds-hb-menu's bootstrap setup to use specific arm9/arm7 entry points YSMenu expects for ttdldi.dat and ttpatch.dat. (these files are used to load the NDS selected NDS file)
+This is a modified version of nds-hb-menu's bootstrap setup to use specific arm9/arm7 entry points YSMenu expects for ttdldi.dat and ttpatch.dat. (these files are used to load the selected NDS file)
 
-This bootstrap parses TTMENU.SYS file created by YSMenu to find the path of the NDS file end use is trying to launch.
+This bootstrap parses TTMENU.SYS file created by YSMenu to find the path of the NDS file YSMenu is trying to launch. YSMenu stores a path string to the NDS file being launched in this file at offset 0x100. (specifically in MSDOS compatible short names so doesn't use long file names)
 
 The purpose of this program is to allow booting homebrew from YSMenu on unsupported cards. (like N-Card/N-Card Clones for example)
 

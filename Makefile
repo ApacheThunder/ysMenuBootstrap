@@ -35,7 +35,7 @@ $(TARGET).nds : $(NITRO_FILES) arm7/$(TARGET).elf arm9/$(TARGET).elf
 	ndstool	-c $(TARGET).nds -7 arm7/$(TARGET).elf -9 arm9/$(TARGET).elf \
 			-b $(CURDIR)/icon.bmp "YSMenu HB Bootstrap;$(VERSION)" \
 			-h 0x200
-#	dlditool nrio.dldi $(TARGET).nds
+	dlditool nrio.dldi $(TARGET).nds
 	cp $(TARGET).nds ttdldi.dat
 	cp $(TARGET).nds ttpatch.dat
 	
