@@ -16,6 +16,13 @@ This will allow YSMenu to think your cart is supported and will have it expect t
 Ensure TTMENU.sys file exists. YSMenu might hang trying to create it so you may need to have a copy of this file present first.
 
 
+# Disclaimer
+
+Note some flashcarts are known to brick when using unsupported YSMenu versions on them. Do note I have made no attempts to fix this. The replacement of the ttpatch.dat file might prevent this but I do not know how or why the bricking happens and if that brick code isn't happening in the dat files I replace then you can still brick the flash cart. Use this at your own risk.
+
+This is safe to use on N-Cards however as I have tested this on those.
+
+
 # License
 Note: While the GPL license allows you to distribute modified versions of this program it would be appreciated if any improvements are contributed to devkitPro. Ultimately the community as a whole is better served by having a single official source for tools, applications and libraries.
 
