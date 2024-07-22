@@ -1,20 +1,19 @@
-# R4 Auto Boot Bootstrap
+# YSMENU Bootstrap
 
-This is a modified build of HBMenu with UI enhancements but setup to act as a kernel/firmware replacement to original R4.
-(though can use this with other carts if you provide your own DLDI file).
+This is a modified version of nds-hb-menu's bootstrap setup to use specific arm9/arm7 entry points YSMenu expects for ttdldi.dat and ttpatch.dat. (these files are used to load the NDS selected NDS file)
 
-* Holding no button on boot cause it to auto boot R4TF.nds if present or Boot.nds if present.
-* Holding A button will cause quick boot into GBA Mode. If a gbaframe.bmp file is present it will be loaded to. Curently setup to use gbaframe bmps made to work with GBA-Exploader.
-* Holding B button will skip auto boot and bring up file browser so you can select a NDS file of your choice.
+This bootstrap parses TTMENU.SYS file created by YSMenu to find the path of the NDS file end use is trying to launch.
 
-Currently the gbaframe loader is setup to load GBA-Exploader compatible BMP files. The directories it will check are as follows in the indicated order:
+The purpose of this program is to allow booting homebrew from YSMenu on unsupported cards. (like N-Card/N-Card Clones for example)
 
-1. fat:/gbaframe.bmp
-2. fat:/GBA_SIGN/gbaframe.bmp
-3. fat:/_system_/gbaframe.bmp
-4. fat:/ttmenu/gbaframe.bmp
+This does NOT allow booting of retail games on unsupported flashcarts. One possible way to do that is to create a version for ttpatch.dat that redirects the file path to use to something like TWiLight Menu's nds-bootstrap. I may or may not do this in the future if there's popular demand for it.
 
 
+Note to modify YSMenu to accept your flashcart as a supported cart. Open YSMenu NDS file in hex editor. Search for the string "TTIO". There should only be one instance grouped in with other DLDI codes like R4TF and such. Edit that string to be the 4 digit letter/code for the DLDI you will be using with YSMenu.
+
+This will allow YSMenu to think your cart is supported and will have it expect ttdldi.dat and ttpatch.dat for launching NDS files. Then also dldipatch the ttdldi.dat and ttpatch.dat file from this repo to also use the dldi intended for your cart.
+
+Ensure TTMENU.sys file exists. YSMenu might hang trying to create it so you may need to have a copy of this file present first.
 
 
 # License
