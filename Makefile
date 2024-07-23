@@ -9,7 +9,7 @@ export TARGET := ttdldi
 export TOPDIR := $(CURDIR)
 
 export YSMENU_MAJOR	:= 1
-export YSMENU_PATCH	:= 0
+export YSMENU_PATCH	:= 1
 
 VERSION	:=	$(YSMENU_MAJOR).$(YSMENU_PATCH)
 
@@ -33,7 +33,7 @@ checkarm9:
 #---------------------------------------------------------------------------------
 $(TARGET).nds : $(NITRO_FILES) arm7/$(TARGET).elf arm9/$(TARGET).elf
 	ndstool	-c $(TARGET).nds -7 arm7/$(TARGET).elf -9 arm9/$(TARGET).elf \
-			-b $(CURDIR)/icon.bmp "YSMenu HB Bootstrap;$(VERSION)" \
+			-b $(CURDIR)/icon.bmp "YSMenu Bootstrap;$(VERSION)" \
 			-h 0x200
 #	dlditool nrio.dldi $(TARGET).nds
 	cp $(TARGET).nds ttdldi.dat
