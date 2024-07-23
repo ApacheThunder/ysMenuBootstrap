@@ -6,7 +6,7 @@ This bootstrap parses TTMENU.SYS file created by YSMenu to find the path of the 
 
 The purpose of this program is to allow booting homebrew from YSMenu on unsupported cards. (like N-Card/N-Card Clones for example)
 
-This does NOT allow booting of retail games on unsupported flashcarts. One possible way to do that is to create a version for ttpatch.dat that redirects the file path to use to something like TWiLight Menu's nds-bootstrap. I may or may not do this in the future if there's popular demand for it.
+As of v1.1 support for retail games is via TWiLight Menu's nds-bootstrap. Please ensure the needed files for nds-bootstrap to work correctly are present on your flashcart's storage. ;)
 
 
 Note to modify YSMenu to accept your flashcart as a supported cart. Open YSMenu NDS file in hex editor. Search for the string "TTIO". There should only be one instance grouped in with other DLDI codes like R4TF and such. Edit that string to be the 4 digit letter/code for the DLDI you will be using with YSMenu.
